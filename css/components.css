@@ -374,3 +374,128 @@
     font-weight: 600;
     color: var(--color-text);
   }
+
+  /* ── Forecast strip (M4) ────────────────────────────────── */
+
+.forecast-strip--empty,
+.insights-panel--empty {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.forecast-strip__empty,
+.insights-panel__empty {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.forecast-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.forecast-strip__grid[hidden],
+.insights-panel__list[hidden] {
+  display: none;
+}
+
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.forecast-card--today {
+  background: var(--color-today-bg);
+  border-color: var(--color-today-border);
+  border-width: 2px;
+}
+
+.forecast-card__day {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.forecast-card--today .forecast-card__day {
+  color: var(--color-today-border);
+}
+
+.forecast-card__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.forecast-card__temps {
+  font-size: 0.875rem;
+}
+
+.forecast-card__high {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.forecast-card__sep {
+  color: var(--color-text-muted);
+  margin: 0 0.125rem;
+}
+
+.forecast-card__low {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ── Insights panel (M4) ────────────────────────────────── */
+
+.insights-panel__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.insight-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insight-row:last-child {
+  border-bottom: none;
+}
+
+.insight-row__time {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.insight-row__condition {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.insight-row__icon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.insight-row__temp {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}

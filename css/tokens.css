@@ -24,6 +24,9 @@
     --temp-warm-accent: #dd6b20;
     --temp-hot-bg: #fff5f5;
     --temp-hot-accent: #e53e3e;
+
+    --color-today-border: #319795;
+    --color-today-bg: #e6fffa;
   }
   
   [data-theme="dark"] {
@@ -46,4 +49,6 @@
     --temp-warm-accent: #f6ad55;
     --temp-hot-bg: #63171b;
     --temp-hot-accent: #fc8181;
+    --color-today-border: #4fd1c5;
+    --color-today-bg: #234e52;
   }

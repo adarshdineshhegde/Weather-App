@@ -276,3 +276,21 @@ searchForm.addEventListener('submit', (event) => {
 clearBtn.addEventListener('click', resetApp);
 
 initApp();
+
+/* ── Mobile nav toggle (M6) ─────────────────────────────── */
+const navToggle = document.getElementById('nav-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('nav--open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 480) {
+      mainNav.classList.remove('nav--open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}

@@ -7,21 +7,30 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <div class="app">
     <header class="header">
-      <div class="header__brand">Weather App</div>
-      <nav class="nav" aria-label="Main">
-        <a href="#" class="nav__link nav__link--active">Dashboard</a>
-        <a href="#" class="nav__link nav__link--disabled">Map</a>
-        <a href="#" class="nav__link nav__link--disabled">Education</a>
-        <a href="#" class="nav__link nav__link--disabled">Historical</a>
-      </nav>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-toggle__icon">☀️</span>
-      </button>
-    </header>
+        <div class="header__brand">Weather App</div>
+        <button
+          type="button"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >☰</button>
+        <nav id="main-nav" class="nav" aria-label="Main">
+          <a href="#" class="nav__link nav__link--active">Dashboard</a>
+          <a href="#" class="nav__link nav__link--disabled">Map</a>
+          <a href="#" class="nav__link nav__link--disabled">Education</a>
+          <a href="#" class="nav__link nav__link--disabled">Historical</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">☀️</span>
+        </button>
+      </header>
 
     <main class="main">
       <section class="search-section">

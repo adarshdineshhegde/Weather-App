@@ -27,6 +27,12 @@
 
     --color-today-border: #319795;
     --color-today-bg: #e6fffa;
+
+    --color-hover-glow: rgba(49, 130, 206, 0.2);
+    --color-accent-soft: #ebf8ff;
+    --color-humidity-hover: #3182ce;
+    --color-wind-hover: #319795;
+    --color-pressure-hover: #805ad5;
   }
   
   [data-theme="dark"] {
@@ -51,4 +57,21 @@
     --temp-hot-accent: #fc8181;
     --color-today-border: #4fd1c5;
     --color-today-bg: #234e52;
+    --color-hover-glow: rgba(99, 179, 237, 0.25);
+    --color-accent-soft: #2a4365;
+    --color-humidity-hover: #63b3ed;
+    --color-wind-hover: #4fd1c5;
+    --color-pressure-hover: #b794f4;
   }
+
+  /* Smooth theme transition (M6) */
+    html.theme-transition,
+    html.theme-transition *,
+    html.theme-transition *::before,
+    html.theme-transition *::after {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease !important;
+    }

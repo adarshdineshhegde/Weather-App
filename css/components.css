@@ -547,3 +547,121 @@
   .clear-btn[hidden] {
     display: none;
   }
+
+/* ── Interactive polish (M6+) ───────────────────────────── */
+
+.weather-card,
+.forecast-card,
+.stat-badge,
+.insight-row {
+  cursor: default;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+/* Only apply rich hovers on devices with a mouse */
+@media (hover: hover) {
+  /* Main weather card */
+  .weather-card:not(.weather-card--empty):hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 24px var(--color-hover-glow);
+    transform: translateY(-2px);
+  }
+
+  .weather-card:not(.weather-card--empty):hover .weather-card__temp-block {
+    filter: brightness(1.06);
+  }
+
+  .weather-card:not(.weather-card--empty):hover .weather-card__city {
+    color: var(--color-accent);
+  }
+
+  /* Forecast day cards */
+  .forecast-card:hover {
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+    box-shadow: 0 6px 18px var(--color-hover-glow);
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .forecast-card:hover .forecast-card__icon {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+  }
+
+  .forecast-card:hover .forecast-card__high {
+    color: var(--color-accent);
+  }
+
+  .forecast-card--today:hover {
+    border-color: var(--color-today-border);
+    background: var(--color-today-bg);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--color-today-border) 35%, transparent);
+  }
+
+  /* Stat badges — each gets its own accent */
+  .stat-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-hover-glow);
+  }
+
+  .stat-badge:nth-child(1):hover {
+    border-color: var(--color-humidity-hover);
+    background: color-mix(in srgb, var(--color-humidity-hover) 14%, var(--color-bg));
+  }
+
+  .stat-badge:nth-child(1):hover .stat-badge__value {
+    color: var(--color-humidity-hover);
+  }
+
+  .stat-badge:nth-child(2):hover {
+    border-color: var(--color-wind-hover);
+    background: color-mix(in srgb, var(--color-wind-hover) 14%, var(--color-bg));
+  }
+
+  .stat-badge:nth-child(2):hover .stat-badge__value {
+    color: var(--color-wind-hover);
+  }
+
+  .stat-badge:nth-child(3):hover {
+    border-color: var(--color-pressure-hover);
+    background: color-mix(in srgb, var(--color-pressure-hover) 14%, var(--color-bg));
+  }
+
+  .stat-badge:nth-child(3):hover .stat-badge__value {
+    color: var(--color-pressure-hover);
+  }
+
+  /* Hourly insight rows */
+  .insight-row:hover {
+    background: var(--color-accent-soft);
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .insight-row:hover .insight-row__temp {
+    transform: scale(1.08);
+    transition: transform 0.2s ease;
+  }
+}
+
+.forecast-card__icon {
+  transition: transform 0.2s ease;
+}
+
+.insight-row__temp {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.search-input:disabled,
+.clear-btn:disabled,
+.theme-toggle:disabled,
+.nav-toggle:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}

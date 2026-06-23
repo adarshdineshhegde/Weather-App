@@ -43,8 +43,38 @@
         <p class="loading__text">Fetching weather data…</p>
       </div>
 
-      <section class="weather-card weather-card--placeholder">
-        <p id="weather-placeholder">Search for a city to see weather</p>
+      <section id="weather-card" class="weather-card weather-card--empty">
+        <p id="weather-empty" class="weather-card__empty">Search for a city to see weather</p>
+
+        <div id="weather-content" class="weather-content" hidden>
+          <div class="weather-card__header">
+            <h2 id="weather-city" class="weather-card__city"></h2>
+            <p id="weather-date" class="weather-card__date"></p>
+          </div>
+
+          <div id="weather-temp-block" class="weather-card__temp-block weather-card__temp-block--mild">
+            <span id="weather-icon" class="weather-card__icon" aria-hidden="true"></span>
+            <div class="weather-card__temp-info">
+              <p id="weather-temp" class="weather-card__temp"></p>
+              <p id="weather-condition" class="weather-card__condition"></p>
+            </div>
+          </div>
+
+          <div class="weather-card__stats">
+            <div class="stat-badge">
+              <span class="stat-badge__label">Humidity</span>
+              <span id="weather-humidity" class="stat-badge__value"></span>
+            </div>
+            <div class="stat-badge">
+              <span class="stat-badge__label">Wind</span>
+              <span id="weather-wind" class="stat-badge__value"></span>
+            </div>
+            <div class="stat-badge">
+              <span class="stat-badge__label">Pressure</span>
+              <span id="weather-pressure" class="stat-badge__value"></span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="forecast-strip forecast-strip--placeholder">
@@ -68,5 +98,6 @@
   <script src="js/theme.js"></script>
   <script src="js/api.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/weatherCodes.js"></script> 
 </body>
 </html>

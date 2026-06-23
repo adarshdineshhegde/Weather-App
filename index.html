@@ -10,48 +10,63 @@
 </head>
 <body>
   <div class="app">
-  <header class="header">
-    <div class="header__brand">Weather App</div>
-    <nav class="nav" aria-label="Main">
-      <a href="#" class="nav__link nav__link--active">Dashboard</a>
-      <a href="#" class="nav__link nav__link--disabled">Map</a>
-      <a href="#" class="nav__link nav__link--disabled">Education</a>
-      <a href="#" class="nav__link nav__link--disabled">Historical</a>
-    </nav>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-      <!-- sun icon (light mode) / moon icon (dark mode) — swap via JS -->
-      <span class="theme-toggle__icon">☀️</span>
-    </button>
-  </header>
+    <header class="header">
+      <div class="header__brand">Weather App</div>
+      <nav class="nav" aria-label="Main">
+        <a href="#" class="nav__link nav__link--active">Dashboard</a>
+        <a href="#" class="nav__link nav__link--disabled">Map</a>
+        <a href="#" class="nav__link nav__link--disabled">Education</a>
+        <a href="#" class="nav__link nav__link--disabled">Historical</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-toggle__icon">☀️</span>
+      </button>
+    </header>
 
-  <main class="main">
-  <section class="search-section">
-    <input type="search" class="search-input" placeholder="Search for a city..." disabled />
-    <!-- M2: enable search -->
-  </section>
+    <main class="main">
+      <section class="search-section">
+        <form id="search-form" class="search-form">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search for a city..."
+            autocomplete="off"
+            required
+          />
+        </form>
+        <div id="error-banner" class="error-banner" role="alert" hidden></div>
+      </section>
 
-  <section class="weather-card weather-card--placeholder">
-    <p>Search for a city to see weather</p>
-  </section>
+      <div id="loading" class="loading" hidden>
+        <div class="loading__spinner" aria-hidden="true"></div>
+        <p class="loading__text">Fetching weather data…</p>
+      </div>
 
-  <section class="forecast-strip forecast-strip--placeholder">
-    <p>5-day forecast will appear here</p>
-  </section>
+      <section class="weather-card weather-card--placeholder">
+        <p id="weather-placeholder">Search for a city to see weather</p>
+      </section>
 
-  <section class="insights-panel insights-panel--placeholder">
-    <p>Hourly insights will appear here</p>
-  </section>
-  </main>
+      <section class="forecast-strip forecast-strip--placeholder">
+        <p>5-day forecast will appear here</p>
+      </section>
 
-  <footer class="footer">
-    <a href="#">Privacy Policy</a>
-    <span>·</span>
-    <a href="#">Terms of Service</a>
-    <span>·</span>
-    <a href="#">Scientific Data Sources</a>
-  </footer>
+      <section class="insights-panel insights-panel--placeholder">
+        <p>Hourly insights will appear here</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="#">Privacy Policy</a>
+      <span>·</span>
+      <a href="#">Terms of Service</a>
+      <span>·</span>
+      <a href="#">Scientific Data Sources</a>
+    </footer>
   </div>
 
   <script src="js/theme.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
